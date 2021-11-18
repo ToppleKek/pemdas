@@ -6,7 +6,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 option(PEMDAS_ENABLE_DISCORDRPC "Enable Discord rich presence" ON)
 
-find_package(Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
 find_package(Taglib REQUIRED)
 find_package(CURL REQUIRED)
 find_library(mpdclient REQUIRED)
@@ -48,7 +48,7 @@ add_executable(pemdas
         src/albumwidget.hpp
         src/toolwidgetlabel.hpp)
 
-set(libs Qt5::Widgets mpdclient ${TAGLIB_LIBRARIES} ${CURL_LIBRARIES})
+set(libs Qt6::Widgets mpdclient ${TAGLIB_LIBRARIES} ${CURL_LIBRARIES})
 
 if(PEMDAS_ENABLE_DISCORDRPC)
     message("Enabling DiscordRPC")
