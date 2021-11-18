@@ -1,0 +1,9 @@
+pypresence does not provide a way to upload assets. Discord doesn't really want you to do it like this but you can by making a POST request to `https://discordapp.com/api/oauth2/applications/APPLICATION_ID/assets` with the payload:
+```json
+{
+  "name": "unique_key",
+  "image": "data:image/png;base64,base64 image data"
+}
+```
+Keep in mind that when you do this, you have a maximum of 150 assets on discord at a given time and you will have to keep track of how many you have uploaded and probably the timestamp that you uploaded them at. When you reach 150 assets you could for example delete the oldest asset.
+
